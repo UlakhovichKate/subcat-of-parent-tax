@@ -24,11 +24,11 @@ if(!class_exists('SubcatOfTax') ) {
 
         }
 
-        function add_actions() {
+        static function add_actions() {
             add_action( 'wp_enqueue_scripts',  [__CLASS__, 'enqueue_styles'] );
         }
 
-        function enqueue_styles() {
+        static function enqueue_styles() {
             wp_enqueue_style( 'subcat-of-tax-styles',  plugin_dir_url( __FILE__ ) . 'style.css' );
         }
     }
