@@ -1,0 +1,41 @@
+.list {
+    list-style: none;
+}
+
+.name {
+    display: block;
+}
+
+.image {
+    max-width: 200px;
+    max-height: 100px;
+}
+
+.image-wrapper {
+    position: relative;
+    max-width: 200px;
+    max-height: 100px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #d3d3d340, #30d5c840);
+    transition: all 300ms linear;
+    z-index: 1;
+    opacity: 0;
+}
+
+.image-wrapper:hover::before {
+    opacity: 1;
+}
+
+.image-wrapper:hover .image {
+    transform: scale(1.2) rotate(30deg);
+    transition: all 300ms linear;
+}
