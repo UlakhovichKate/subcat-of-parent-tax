@@ -4,9 +4,16 @@
  * Get the list subcategories of added taxonomy
  * */
 
-function getSubcategories() {
+function getSubcategories( $atts) {
+
+    $default = array(
+        'category' => 'category',
+    );
+
+    $a = shortcode_atts($default, $atts);
+
     $taxonomies = get_terms( array(
-        'taxonomy' => 'education_cat', // custom taxonomy
+        'taxonomy' => $a['category'], //'education_cat', // custom taxonomy
         'hide_empty' => false,
         'order_by' => 'name'
     ) );
